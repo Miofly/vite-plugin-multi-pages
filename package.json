@@ -13,7 +13,7 @@
     "build": "tsup src-local/index.ts --format esm,cjs --dts",
     "test": "cd example/vite-plugin-demo && pnpm i && pnpm dev",
     "pub": "pnpm build && npm publish --no-git-checks",
-    "git": "git pull && git add .&& git commit -m 'feat: init project' && git push"
+    "git": "git commit -m 'docs: update mess' && git push"
   },
   "license": "MIT",
   "keywords": [
