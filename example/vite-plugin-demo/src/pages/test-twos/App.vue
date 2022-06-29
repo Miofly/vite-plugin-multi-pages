@@ -1,4 +1,4 @@
 <template>
-  <div>我是test-twossss</div>
+  <div>这是测试页面</div>
 </template>
 
