@@ -54,7 +54,7 @@ export interface MpaOptions {
    */
   defaultEntries: string;
   /**
-   * rewrite rule list
+   * 重写页面跳转规则
    * @default []
    */
   rewrites: Rewrite[]

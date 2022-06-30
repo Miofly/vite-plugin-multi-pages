@@ -65,6 +65,7 @@ function scanFile2Html(current: string, scanFile: string, filename: string) {
   return current.replace(entryRe, filename);
 }
 
+/** 特定启动页面 */
 function getSpecialPageNames (specialPageNames: string) {
   let _specialPageNames;
   if (specialPageNames) {
