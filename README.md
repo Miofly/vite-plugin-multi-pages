@@ -1,18 +1,18 @@
-# vite-plugin-multi-pages-entry
+# vite-plugin-multi-pages
 
 > 对 `Vite` 的多页应用程序支持- 支持 `Vue2/3`、`React` 等
 
 ## Usage
 
 ```sh
-yarn add vite-plugin-multi-pages-entry
+yarn add vite-plugin-multi-pages
 # or
-pnpm add vite-plugin-multi-pages-entry
+pnpm add vite-plugin-multi-pages
 ```
 
 ```ts
 // vite.config.ts
-import mpa from 'vite-plugin-multi-pages-entry'
+import mpa from 'vite-plugin-multi-pages'
 
 // @see https://vitejs.dev/config/
 export default defineConfig({

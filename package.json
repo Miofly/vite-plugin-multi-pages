@@ -1,9 +1,9 @@
 {
   "name": "vite-plugin-multi-pages",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Multi Page for vite",
   "module": "dist/index.mjs",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "test": "cd example/vite-plugin-demo && pnpm i && pnpm dev",
-    "pub": "pnpm build && npm publish --no-git-checks",
+    "pub": "npm version patch && pnpm build && npm publish --no-git-checks",
     "git": "git commit -m 'docs: update mess' && git push"
   },
   "license": "MIT",
@@ -37,5 +37,10 @@
     "vite": "2.9.13",
     "cz-customizable": "6.7.0",
     "yorkie": "2.0.0"
+  },
+  "homepage": "https://github.com/Miofly/vite-plugin-multi-pages",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Miofly/vite-plugin-multi-pages.git"
   }
 }
