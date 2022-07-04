@@ -1,6 +1,6 @@
 {
-  "name": "vite-plugin-multi-pages-entry",
-  "version": "0.0.1",
+  "name": "vite-plugin-multi-pages",
+  "version": "0.0.3",
   "description": "Multi Page for vite",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   ],
   "author": "953212389@qq.com",
   "scripts": {
-    "build": "tsup src-local/index.ts --format esm,cjs --dts",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
     "test": "cd example/vite-plugin-demo && pnpm i && pnpm dev",
     "pub": "pnpm build && npm publish --no-git-checks",
     "git": "git commit -m 'docs: update mess' && git push"

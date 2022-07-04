@@ -84,4 +84,4 @@ export interface MpaOptions {
 
 ## Examples
 
-- `see` [src/examples](https://github.com/Miofly/vite-plugin-multi-pages-entry/tree/master/example/vite-plugin-demo)
+- `see` [src/examples](https://github.com/Miofly/vite-plugin-multi-pages/tree/master/example/vite-plugin-demo)
