@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "Multi Page for vite",
   "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "main": "src/main.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
