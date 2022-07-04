@@ -1,9 +1,9 @@
 {
   "name": "vite-plugin-multi-pages",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Multi Page for vite",
   "module": "dist/index.mjs",
-  "main": "src/main.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"

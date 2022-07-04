@@ -1,6 +1,6 @@
 # vite-plugin-multi-pages
 
-> 对 `Vite` 的多页应用程序支持- 支持 `Vue2/3`、`React` 等
+> Multi page application support for 'vite' - support for 'vue2/3', 'react', etc
 
 ## Usage
 
@@ -28,23 +28,23 @@ export default defineConfig({
 ```typescript
 export interface MpaOptions {
   /**
-   * viteDevServer的打开路径
-   * 此插件将尝试为您打开第一页，但您仍然可以自定义, e.g. /index#/about
-   * @default 第一页路径
+   * open path of vite dev server
+   * This plug-in will try to open the first page for you, but you can still customize it, e.g. /index#/about
+   * @default firstPagePath
    */
   defaultOpenPage: string;
   /**
-   * 扫描位置
+   * scanning position
    * @default 'src/pages'
    */
   scanDir: string;
   /**
-   * 扫描文件
+   * Scan file
    * @default 'main.{js,ts,jsx,tsx}'
    */
   scanFile: string;
   /**
-   * html 文件名
+   * html fileName
    * @default 'index.html'
    */
   filename: string;
@@ -54,29 +54,29 @@ export interface MpaOptions {
    */
   defaultEntries: string;
   /**
-   * 重写页面跳转规则
+   * rewrite page jump rules
    * @default []
    */
   rewrites: Rewrite[]
   /**
-   * 开启或打包 scanDir 下特定的页面
-   * @default 空 | app-four,app-nine
+   * Open or package a specific page under scandir
+   * @default empty | app-four,app-nine
    */
   specialPageNames: string;
   /**
-   * 忽略开启或打包 scanDir 下特定的页面
-   * @default 空 | app-four,app-nine
+   * Ignore opening or packaging specific pages under scandir
+   * @default empty | app-four,app-nine
    */
   ignorePageNames: string;
   /**
-   * 打包文件目录是否加入前缀
-   * @default 空 | string
+   * whether the package file directory is prefixed
+   * @default empty | string
    */
   buildPrefixName: string;
   /**
-   * 打包后是否不需要主目录
+   * Whether the home directory is not required after packaging
    * @default false
-   * 配置为 true，会将 index.html 的父级目录删除，同时 index.html 名称会更改为 父目录名称.html
+   * configured as true，Index The parent directory of HTML is deleted, and index The HTML name will be changed to the parent directory name html
    */
   htmlNoDirectory: boolean
 }
