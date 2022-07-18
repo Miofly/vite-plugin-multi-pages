@@ -1,13 +1,12 @@
 # vite-plugin-multi-pages
 
-**English** | [中文](./README.zh_CN.md)
+**中文** | [English](./README.md)
 
-> Multi page applications supporting vite - vue2、3, react, etc
+> 支持 vite 的多页应用程序-支持 vue2/3、react 等
 
+## 如何使用
 
-## How To Use
-
-### Install
+### 安装
 
 ```sh
 yarn add vite-plugin-multi-pages
@@ -15,10 +14,9 @@ yarn add vite-plugin-multi-pages
 pnpm add vite-plugin-multi-pages
 ```
 
-### ToConfigure
+### 配置
 
 **vite.config.ts**
-
 ```typescript
 import mpa from 'vite-plugin-multi-pages'
 
@@ -34,39 +32,39 @@ export default defineConfig({
 ```typescript
 export interface MpaOptions {
 	/**
-	 * defaultOpenPage
+	 * 默认打开页面
 	 * @default true
 	 * @example / (root path) | true (first page) | test-two
 	 */
 	defaultOpenPage: '/' | boolean | string;
 	/**
-	 * scanning dir
+	 * 多页面目录
 	 * @default src/pages
 	 */
 	scanDir: string;
 	/**
-	 * scanFile
+	 * 文件入口
 	 * @default 'main.{js,ts,jsx,tsx}'
 	 */
 	scanFile: string;
 	/**
-	 * html fileName
+	 * html 文件名
 	 * @default 'index.html'
 	 */
 	filename: string;
 	/**
-	 * rewrite rule list
-	 * @default []
+	 * 路由匹配规则
+	 * @default ''
 	 */
 	rewrites: Rewrite[]
 	/**
-	 * open or build a specific page under scanDir
+	 * 打包或启动特定的页面
 	 * @default ''
 	 * @example test-one,test-twos
 	 */
 	specialPageNames: string;
 	/**
-	 * ignore open or build a specific page under scanDir
+	 * 忽略打包或启动特定的页面
 	 * @default ''
 	 * @example test-twos
 	 */
@@ -74,11 +72,11 @@ export interface MpaOptions {
 }
 ```
 
-## examples
+## 使用示例
 
 - [src/examples](https://github.com/Miofly/vite-plugin-multi-pages/tree/master/examples/vite-plugin-demo)
 
-## More
+## 更多
 
-- `Coordination vite-plugin-html-template-mpa plugin` : [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
-- `Coordination vite-plugin-vconsole-mpa plugin config vconsole` : [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
+- 配合 `vite-plugin-html-template-mpa` 自动生成 `index.html` 模板插件使用: [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
+- 配合 `vite-plugin-vconsole-mpa` 自动配置 `vconsole`: [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
