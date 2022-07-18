@@ -80,5 +80,5 @@ export interface MpaOptions {
 
 ## More
 
-- `Coordination vite-plugin-html-template-mpa plugin` : [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
-- `Coordination vite-plugin-vconsole-mpa plugin config vconsole` : [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
+- Coordination `vite-plugin-html-template-mpa` plugin : [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
+- Coordination `vite-plugin-vconsole-mpa` plugin config vconsole : [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
