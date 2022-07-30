@@ -4,7 +4,6 @@
 
 > Multi page applications supporting vite - vue2、3, react, etc
 
-
 ## How To Use
 
 ### Install
@@ -33,44 +32,44 @@ export default defineConfig({
 
 ```typescript
 export interface MpaOptions {
-	/**
-	 * defaultOpenPage
-	 * @default true
-	 * @example / (root path) | true (first page) | test-two
-	 */
-	defaultOpenPage: '/' | boolean | string;
-	/**
-	 * scanning dir
-	 * @default src/pages
-	 */
-	scanDir: string;
-	/**
-	 * scanFile
-	 * @default 'main.{js,ts,jsx,tsx}'
-	 */
-	scanFile: string;
-	/**
-	 * html fileName
-	 * @default 'index.html'
-	 */
-	filename: string;
-	/**
-	 * rewrite rule list
-	 * @default []
-	 */
-	rewrites: Rewrite[]
-	/**
-	 * open or build a specific page under scanDir
-	 * @default ''
-	 * @example test-one,test-twos
-	 */
-	specialPageNames: string;
-	/**
-	 * ignore open or build a specific page under scanDir
-	 * @default ''
-	 * @example test-twos
-	 */
-	ignorePageNames: string;
+  /**
+   * defaultOpenPage
+   * @default true
+   * @example / (root path) | true (first page) | test-two
+   */
+  defaultOpenPage: '/' | boolean | string;
+  /**
+   * scanning dir
+   * @default src/pages
+   */
+  scanDir: string;
+  /**
+   * scanFile
+   * @default 'main.{js,ts,jsx,tsx}'
+   */
+  scanFile: string;
+  /**
+   * html fileName
+   * @default 'index.html'
+   */
+  filename: string;
+  /**
+   * rewrite rule list
+   * @default []
+   */
+  rewrites: Rewrite[]
+  /**
+   * open or build a specific page under scanDir
+   * @default ''
+   * @example test-one,test-twos
+   */
+  specialPageNames: string;
+  /**
+   * ignore open or build a specific page under scanDir
+   * @default ''
+   * @example test-twos
+   */
+  ignorePageNames: string;
 }
 ```
 
@@ -80,5 +79,7 @@ export interface MpaOptions {
 
 ## More
 
-- Coordination `vite-plugin-html-template-mpa` plugin : [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
-- Coordination `vite-plugin-vconsole-mpa` plugin config vconsole : [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
+- Cooperate `vite-plugin-html-template-mpa`
+  plugin : [https://github.com/Miofly/vite-plugin-html-template-mpa](https://github.com/Miofly/vite-plugin-html-template-mpa)
+- Cooperate `vite-plugin-vconsole-mpa` plugin config
+  vconsole : [https://github.com/Miofly/vite-plugin-vconsole-mpa](https://github.com/Miofly/vite-plugin-vconsole-mpa)
