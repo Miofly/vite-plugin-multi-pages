@@ -22,9 +22,9 @@ pnpm add vite-plugin-multi-pages
 import mpa from 'vite-plugin-multi-pages'
 
 export default defineConfig({
-	plugins: [
-		mpa(/* options */),
-	],
+  plugins: [
+    mpa(/* options */),
+  ],
 })
 ```
 

@@ -39,7 +39,7 @@ function parseEntryFile(file: string, filters: string[] = []) {
 
 function parseFiles(files: string[], defaultEntries: string) {
   // @ts-ignore
-  const args: string = (argv.entry as string) || (argv.file as string) || (argv.page as string) || '';
+  const args: string = (argv?.entry as string) || (argv?.file as string) || (argv?.page as string) || '';
   if (args === '') {
     defaultEntries = '';
   }
@@ -58,13 +58,12 @@ function parseFiles(files: string[], defaultEntries: string) {
 }
 
 function scanFile2Html(current: string, scanFile: string, filename: string) {
-
   const reStr = `${scanFile.split('.')[0]}[.](.*)`;
   const entryRe = new RegExp(reStr);
   return current.replace(entryRe, filename);
 }
 
-function getSpecialPageNames (specialPageNames: string) {
+function getSpecialPageNames(specialPageNames: string) {
   let _specialPageNames;
   if (specialPageNames) {
     if (specialPageNames.includes(',')) {
@@ -95,14 +94,17 @@ function getIgnorePageNames(ignorePageNames: string) {
 
 function getPagesInfo({ defaultEntries, scanDir, scanFile, specialPageNames, ignorePageNames }: MpaOptions): PageInfo {
   // ['src/pages/test-two/main.ts', 'src/pages/test-twos/main.ts']
-  const allFiles: string[] = fg.sync(`${scanDir}/${getSpecialPageNames(specialPageNames)}/${scanFile}`.replace('//', '/'), {
-    ignore: [`${scanDir}/${getIgnorePageNames(ignorePageNames)}/${scanFile}`.replace('//', '/')]
-  });
-  
+  const allFiles: string[] = fg.sync(
+    `${scanDir}/${getSpecialPageNames(specialPageNames)}/${scanFile}`.replace('//', '/'),
+    {
+      ignore: [`${scanDir}/${getIgnorePageNames(ignorePageNames)}/${scanFile}`.replace('//', '/')]
+    }
+  );
+
   const pages = {};
   const result = parseFiles(allFiles, defaultEntries);
   const { entries } = result;
-  
+
   entries.forEach((entry) => {
     const { file, pageName, outputPath } = entry;
     // @ts-ignore
@@ -119,7 +121,7 @@ export function getMPAIO(root: string, options: MpaOptions) {
   const { scanFile, filename } = options;
   const pages = getPagesInfo(options);
   const input: Record<string, string> = {};
-  
+
   Object.keys(pages).map((key) => {
     input[key] = path.resolve(root, scanFile2Html(pages[key].entry, scanFile, filename));
   });
@@ -153,7 +155,6 @@ export function getHistoryReWriteRuleList(options: MpaOptions): Rewrite[] {
       from: new RegExp(`^\/${pageName}$`),
       to
     });
-
   });
 
   return list;
