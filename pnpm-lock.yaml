@@ -1255,7 +1255,7 @@ packages:
     dev: true
 
   /strip-final-newline/2.0.0:
-    resolution: { integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA== }
+    resolution: { integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRVcW6WZg+3bk93y6pLjA== }
     engines: { node: '>=6' }
     dev: true
 
