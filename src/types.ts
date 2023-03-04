@@ -35,7 +35,7 @@ export interface MpaOptions {
    * rewrite rule list
    * @default []
    */
-  rewrites: Rewrite[]
+  rewrites: Rewrite[];
   /**
    * open or build a specific page under scanDir
    * @default ''

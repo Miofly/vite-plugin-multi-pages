@@ -1,8 +1,8 @@
-import type { PluginOption } from 'vite';
-import type { MpaOptions } from './types';
 import history from 'connect-history-api-fallback';
-import { getMPAIO, getHistoryReWriteRuleList, getFirstPage } from './utils';
+import type { PluginOption } from 'vite';
 import { name } from '../package.json';
+import type { MpaOptions } from './types';
+import { getFirstPage, getHistoryReWriteRuleList, getMPAIO } from './utils';
 
 export default function mpa(userOptions: Partial<MpaOptions> = {}): PluginOption {
   const options: MpaOptions = {
@@ -26,14 +26,12 @@ export default function mpa(userOptions: Partial<MpaOptions> = {}): PluginOption
     enforce: 'pre',
     config(config) {
       const openBool = typeof options.defaultOpenPage === 'boolean';
-  
+
       config.build = config.build || {};
       config.build.rollupOptions = config.build.rollupOptions || {};
       config.build.rollupOptions.input = getMPAIO(config.root || process.cwd(), options);
       config.server = config.server || {};
-      config.server.open = options.defaultOpenPage ?
-        openBool ? getFirstPage(config.build.rollupOptions.input) :
-      options.defaultOpenPage === '/' ? '/' : '/' + options.defaultOpenPage : false;
+      config.server.open = options.defaultOpenPage ? (openBool ? getFirstPage(config.build.rollupOptions.input) : options.defaultOpenPage === '/' ? '/' : '/' + options.defaultOpenPage) : false;
     },
     configureServer({ middlewares: app }) {
       app.use(

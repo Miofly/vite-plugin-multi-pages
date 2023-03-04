@@ -1,8 +1,8 @@
-import fg from 'fast-glob';
-import yargs from 'yargs';
-import path from 'path';
-import type { MpaOptions } from '../';
 import type { Rewrite } from 'connect-history-api-fallback';
+import fg from 'fast-glob';
+import path from 'path';
+import yargs from 'yargs';
+import type { MpaOptions } from '../';
 
 const argv = yargs.argv;
 
