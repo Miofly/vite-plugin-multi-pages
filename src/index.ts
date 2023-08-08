@@ -31,7 +31,13 @@ export default function mpa(userOptions: Partial<MpaOptions> = {}): PluginOption
       config.build.rollupOptions = config.build.rollupOptions || {};
       config.build.rollupOptions.input = getMPAIO(config.root || process.cwd(), options);
       config.server = config.server || {};
-      config.server.open = options.defaultOpenPage ? (openBool ? getFirstPage(config.build.rollupOptions.input) : options.defaultOpenPage === '/' ? '/' : '/' + options.defaultOpenPage) : false;
+      config.server.open = options.defaultOpenPage
+        ? openBool
+          ? getFirstPage(config.build.rollupOptions.input)
+          : options.defaultOpenPage === '/'
+          ? '/'
+          : '/' + options.defaultOpenPage
+        : false;
     },
     configureServer({ middlewares: app }) {
       app.use(

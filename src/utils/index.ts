@@ -47,12 +47,12 @@ function parseFiles(files: string[], defaultEntries: string) {
   const filters = args
     .split(',')
     .concat(defaultEntries.split(','))
-    .filter((_) => _);
+    .filter(_ => _);
 
-  const ret = files.map((file) => parseEntryFile(file, filters));
+  const ret = files.map(file => parseEntryFile(file, filters));
   return {
     allEntries: ret,
-    entries: ret.filter((e) => e.include),
+    entries: ret.filter(e => e.include),
     args
   };
 }
@@ -105,7 +105,7 @@ function getPagesInfo({ defaultEntries, scanDir, scanFile, specialPageNames, ign
   const result = parseFiles(allFiles, defaultEntries);
   const { entries } = result;
 
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     const { file, pageName, outputPath } = entry;
     // @ts-ignore
     pages[pageName] = {
@@ -122,7 +122,7 @@ export function getMPAIO(root: string, options: MpaOptions) {
   const pages = getPagesInfo(options);
   const input: Record<string, string> = {};
 
-  Object.keys(pages).map((key) => {
+  Object.keys(pages).map(key => {
     input[key] = path.resolve(root, scanFile2Html(pages[key].entry, scanFile, filename));
   });
 
@@ -137,7 +137,7 @@ export function getHistoryReWriteRuleList(options: MpaOptions): Rewrite[] {
     to: `./${scanDir}/index/${filename}`
   });
   const pages = getPagesInfo(options);
-  Object.keys(pages).map((pageName) => {
+  Object.keys(pages).map(pageName => {
     const to = `./${scanFile2Html(pages[pageName].entry, scanFile, filename)}`;
     list.push({
       from: new RegExp(`^/${pageName}/index.html/*`),
