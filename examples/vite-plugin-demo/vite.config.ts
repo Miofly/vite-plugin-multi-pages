@@ -7,7 +7,7 @@ export default defineConfig({
     vue(),
     mpa({
       defaultOpenPage: 'test-two',
-      ignorePageNames: ''
-    })
-  ]
+      ignorePageNames: '',
+    }),
+  ],
 });

@@ -33,13 +33,17 @@ function parseEntryFile(file: string, filters: string[] = []) {
     file,
     pageName,
     outputPath,
-    include: filters.includes(pageName) || filters.length === 0
+    include: filters.includes(pageName) || filters.length === 0,
   };
 }
 
 function parseFiles(files: string[], defaultEntries: string) {
   // @ts-ignore
-  const args: string = (argv?.entry as string) || (argv?.file as string) || (argv?.page as string) || '';
+  const args: string =
+    (argv?.entry as string) ||
+    (argv?.file as string) ||
+    (argv?.page as string) ||
+    '';
   if (args === '') {
     defaultEntries = '';
   }
@@ -53,7 +57,7 @@ function parseFiles(files: string[], defaultEntries: string) {
   return {
     allEntries: ret,
     entries: ret.filter(e => e.include),
-    args
+    args,
   };
 }
 
@@ -92,13 +96,27 @@ function getIgnorePageNames(ignorePageNames: string) {
   return _ignorePageNames;
 }
 
-function getPagesInfo({ defaultEntries, scanDir, scanFile, specialPageNames, ignorePageNames }: MpaOptions): PageInfo {
+function getPagesInfo({
+  defaultEntries,
+  scanDir,
+  scanFile,
+  specialPageNames,
+  ignorePageNames,
+}: MpaOptions): PageInfo {
   // ['src/pages/test-two/main.ts', 'src/pages/test-twos/main.ts']
   const allFiles: string[] = fg.sync(
-    `${scanDir}/${getSpecialPageNames(specialPageNames)}/${scanFile}`.replace('//', '/'),
+    `${scanDir}/${getSpecialPageNames(specialPageNames)}/${scanFile}`.replace(
+      '//',
+      '/',
+    ),
     {
-      ignore: [`${scanDir}/${getIgnorePageNames(ignorePageNames)}/${scanFile}`.replace('//', '/')]
-    }
+      ignore: [
+        `${scanDir}/${getIgnorePageNames(ignorePageNames)}/${scanFile}`.replace(
+          '//',
+          '/',
+        ),
+      ],
+    },
   );
 
   const pages = {};
@@ -110,7 +128,7 @@ function getPagesInfo({ defaultEntries, scanDir, scanFile, specialPageNames, ign
     // @ts-ignore
     pages[pageName] = {
       entry: file,
-      filename: genFileName(pageName, outputPath)
+      filename: genFileName(pageName, outputPath),
     };
   });
 
@@ -123,7 +141,10 @@ export function getMPAIO(root: string, options: MpaOptions) {
   const input: Record<string, string> = {};
 
   Object.keys(pages).map(key => {
-    input[key] = path.resolve(root, scanFile2Html(pages[key].entry, scanFile, filename));
+    input[key] = path.resolve(
+      root,
+      scanFile2Html(pages[key].entry, scanFile, filename),
+    );
   });
 
   return input;
@@ -134,26 +155,26 @@ export function getHistoryReWriteRuleList(options: MpaOptions): Rewrite[] {
   const list: Rewrite[] = rewrites;
   list.push({
     from: /^\/$/,
-    to: `./${scanDir}/index/${filename}`
+    to: `./${scanDir}/index/${filename}`,
   });
   const pages = getPagesInfo(options);
   Object.keys(pages).map(pageName => {
     const to = `./${scanFile2Html(pages[pageName].entry, scanFile, filename)}`;
     list.push({
       from: new RegExp(`^/${pageName}/index.html/*`),
-      to
+      to,
     });
     list.push({
       from: new RegExp(`^/${pageName}/index.html$`),
-      to
+      to,
     });
     list.push({
       from: new RegExp(`^\/${pageName}.html$`),
-      to
+      to,
     });
     list.push({
       from: new RegExp(`^\/${pageName}$`),
-      to
+      to,
     });
   });
 
