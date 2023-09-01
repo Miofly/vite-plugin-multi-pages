@@ -3,13 +3,13 @@
   "version": "0.0.11",
   "description": "Multi Page for vite",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "pnpm clean:dist && pnpm stub",
     "stub": "unbuild --stub",
-    "pub": "pnpm build && tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-md-plus",
+    "pub": "pnpm build && tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-multi-pages",
     "clean": "pnpm /^clean:/",
     "clean:dist": "rimraf dist",
     "clean:node_modules": "rimraf node_modules"
