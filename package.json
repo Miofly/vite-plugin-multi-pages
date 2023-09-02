@@ -2,14 +2,33 @@
   "name": "vite-plugin-multi-pages",
   "version": "0.0.11",
   "description": "Multi Page for vite",
+  "keywords": [
+    "vite-plugin",
+    "mpa",
+    "MPA",
+    "multi-page"
+  ],
+  "license": "MIT",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
-    "build": "pnpm clean:dist && pnpm stub",
     "stub": "unbuild --stub",
-    "pub": "pnpm build && tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-multi-pages",
+    "dev": "pnpm stub",
+    "build": "pnpm clean:dist && pnpm -F @vft/script test",
+    "pub": "pnpm build &&  tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-multi-pages",
     "clean": "pnpm /^clean:/",
     "clean:dist": "rimraf dist",
     "clean:node_modules": "rimraf node_modules"
@@ -17,23 +36,25 @@
   "files": [
     "dist"
   ],
-  "author": "953212389@qq.com",
-  "license": "MIT",
-  "keywords": [
-    "vite-plugin",
-    "mpa",
-    "MPA",
-    "multi-page"
-  ],
+  "author": {
+    "name": "wfly",
+    "url": "https://github.com/Miofly",
+    "email": "953212389@qq.com"
+  },
+  "peerDependencies": {
+    "vite": "^2.0.0 || ^3.0.0 || ^4.0.0",
+    "typescript": ">=4.0.0"
+  },
   "dependencies": {
     "connect-history-api-fallback": "2.0.0",
     "yargs": "17.7.1"
   },
   "devDependencies": {
+    "unbuild": "2.0.0",
+    "@vft/tsconfig": "*",
     "@types/connect-history-api-fallback": "1.3.5",
     "@types/yargs": "17.0.22",
-    "fast-glob": "^3.2.12",
-    "unbuild": "2.0.0"
+    "fast-glob": "^3.2.12"
   },
   "homepage": "https://github.com/Miofly/vite-plugin-multi-pages",
   "repository": {
