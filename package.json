@@ -27,8 +27,8 @@
   "scripts": {
     "stub": "unbuild --stub",
     "dev": "pnpm stub",
-    "build": "pnpm clean:dist && pnpm -F @vft/script test",
-    "pub": "pnpm build &&  tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-multi-pages",
+    "build": "pnpm clean:dist && pnpm -F @vft/script ts:common",
+    "pub": "pnpm build && tsx ../../scripts/build/src/publish.ts --pkg vite-plugin/vite-plugin-multi-pages",
     "clean": "pnpm /^clean:/",
     "clean:dist": "rimraf dist",
     "clean:node_modules": "rimraf node_modules"
