@@ -19,13 +19,11 @@ pnpm add vite-plugin-multi-pages
 **vite.config.ts**
 
 ```typescript
-import mpa from 'vite-plugin-multi-pages'
+import mpa from 'vite-plugin-multi-pages';
 
 export default defineConfig({
-  plugins: [
-    mpa(/* options */),
-  ],
-})
+  plugins: [mpa(/* options */)],
+});
 ```
 
 ## Options
@@ -57,7 +55,7 @@ export interface MpaOptions {
    * rewrite rule list
    * @default []
    */
-  rewrites: Rewrite[]
+  rewrites: Rewrite[];
   /**
    * open or build a specific page under scanDir
    * @default ''
