@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-multi-pages",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Multi Page for vite",
   "keywords": [
     "vite-plugin",
