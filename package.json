@@ -42,19 +42,19 @@
     "email": "953212389@qq.com"
   },
   "peerDependencies": {
-    "vite": "2.0.0 || ^3.0.0 || ^4.0.0",
+    "vite": ">=2.0.0",
     "typescript": ">=4.0.0"
   },
   "dependencies": {
     "connect-history-api-fallback": "2.0.0",
-    "yargs": "17.7.1"
+    "yargs": "17.7.1",
+    "fast-glob": "3.2.12"
   },
   "devDependencies": {
     "unbuild": "2.0.0",
     "@vft/tsconfig": "latest",
     "@types/connect-history-api-fallback": "1.3.5",
-    "@types/yargs": "17.0.22",
-    "fast-glob": "3.2.12"
+    "@types/yargs": "17.0.22"
   },
   "homepage": "https://github.com/Miofly/vite-plugin-multi-pages",
   "repository": {
