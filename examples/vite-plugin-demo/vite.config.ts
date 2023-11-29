@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [
     vue(),
     mpa({
+      scanDir: 'src/pages',
       defaultOpenPage: 'test-two',
       ignorePageNames: '',
     }),

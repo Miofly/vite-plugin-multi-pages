@@ -4,7 +4,7 @@ import path from 'path';
 import yargs from 'yargs';
 import type { MpaOptions } from '../';
 
-const argv = yargs.argv;
+const argv = yargs.argv as Record<string, any>;
 
 export type PageInfo = Record<
   string,

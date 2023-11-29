@@ -9,7 +9,7 @@ export default function mpa(
 ): PluginOption {
   const options: MpaOptions = {
     defaultOpenPage: '/',
-    scanDir: 'src/pages',
+    scanDir: 'src/views',
     scanFile: 'main.{js,ts,jsx,tsx}',
     defaultEntries: '',
     filename: 'index.html',
@@ -42,13 +42,12 @@ export default function mpa(
         ? openBool
           ? getFirstPage(config.build.rollupOptions.input)
           : options.defaultOpenPage === '/'
-          ? '/'
-          : '/' + options.defaultOpenPage
+            ? '/'
+            : '/' + options.defaultOpenPage
         : false;
     },
     configureServer({ middlewares: app }) {
       app.use(
-        // @ts-ignore
         history({
           verbose: Boolean(process.env.DEBUG) && process.env.DEBUG !== 'false',
           disableDotRule: undefined,
