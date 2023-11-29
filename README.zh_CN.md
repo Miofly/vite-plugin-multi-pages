@@ -38,7 +38,7 @@ export interface MpaOptions {
   defaultOpenPage: '/' | boolean | string;
   /**
    * 多页面目录
-   * @default src/pages
+   * @default src/views
    */
   scanDir: string;
   /**

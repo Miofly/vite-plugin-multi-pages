@@ -38,7 +38,7 @@ export interface MpaOptions {
   defaultOpenPage: '/' | boolean | string;
   /**
    * scanning dir
-   * @default src/pages
+   * @default src/views
    */
   scanDir: string;
   /**
