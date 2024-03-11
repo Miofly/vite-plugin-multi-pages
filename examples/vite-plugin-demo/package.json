@@ -10,7 +10,7 @@
   },
   "peerDependencies": {
     "vue": "3.4.19",
-    "vite": ">=3.1.7"
+    "vite": ">=2.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "4.0.0",
